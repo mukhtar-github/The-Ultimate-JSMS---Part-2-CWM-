@@ -445,6 +445,25 @@
 
 // 9- Method Overriding
 
+//Earlier in the section about prototypical inheritance, I talked about method overridding.
+//So, method ovrridding is when we have methodin a base class, or a base object, but we want
+//to change it's implimentation in a direct class or a direct object. So, maybe the algorithm
+//for moving a shape is common amongst most of the shape, but perharps our circles need a 
+//differnt algorithm for them to be moved.
 
+class Shape {
+
+    move() {
+        console.log('move');
+    }
+}
+
+class Circle extends Shape {
+    move() {
+        console.log('move circle');
+    } 
+}
+
+const c = new Circle('red', 1);
 
 
