@@ -449,7 +449,8 @@
 //So, method ovrridding is when we have methodin a base class, or a base object, but we want
 //to change it's implimentation in a direct class or a direct object. So, maybe the algorithm
 //for moving a shape is common amongst most of the shape, but perharps our circles need a 
-//differnt algorithm for them to be moved.
+//differnt algorithm for them to be moved. So, we can override the move method in the Shape
+//class
 
 class Shape {
 
