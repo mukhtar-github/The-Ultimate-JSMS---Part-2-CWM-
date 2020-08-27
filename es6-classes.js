@@ -487,4 +487,60 @@
 // const c = new Circle('red', 1);
 
 
-// 11- Exercise
+// 11- Exercise & 
+
+// I want you to implement a stack using ES6 Classes. What is a Stack? A Stack is a special kind
+//of data structure, like a physical stack or pipe. A stack has two essential operations, Push
+//for adding an object in the box, and Pop to remove the object on the top of the box. Unlike
+//arrays, we can not access objects in a stack using their index, but we can always remove the
+//object on the top of the stack by calling the pop method.
+
+
+// 12- Solution
+
+//Now, let's implement a Stack class. Internally I,m going to use an array to store the objects
+//in the stack, but I want to keep that array private, I don't want it to be accessible from
+//the outside, because I want the consumers of the stack to only use the push and pop methods.
+//If they have access to that internal array, they can always access the objects using their
+//index. But I told you before, in stack ,we should not be able to access objects using their
+//index. So I'm going to add a constructor in the Stack class to initialize the internal private
+//array. To implement a private property, I'm going to use a WeakMap. So let's define a constant
+//called _items and set it to a new WeakMap. In the constructor, we're going to an empty array
+//in the WeakMap. So later we'll use the get method to get access to this array to add objects
+//to it.
+
+
+const _items = new WeakMap();
+
+class Stack {
+    constructor() {
+        _items.set(this, []);
+    }
+
+    push(obj) {
+        _items.get(this).push(obj);
+    }
+
+    pop() {
+        const items = _items.get(this);
+
+        if (items.length === 0 ) 
+        throw new Error('Stack is empty.');
+
+        return items.pop();
+    }
+
+    peek() {
+        const items = _items.get(this);
+
+        if (items.length === 0) 
+        throw new Error('Stack is empty.')
+
+        return items[items.length - 1];
+    }
+
+    get count() {
+        return _items.get(this).length;
+    }
+}
+
