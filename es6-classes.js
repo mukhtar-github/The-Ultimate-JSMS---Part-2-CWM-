@@ -450,21 +450,41 @@
 //to change it's implimentation in a direct class or a direct object. So, maybe the algorithm
 //for moving a shape is common amongst most of the shape, but perharps our circles need a 
 //differnt algorithm for them to be moved. So, we can override the move method in the Shape
-//class
+//class by re-implimenting the move method in the Circle class. If we call c.move() ==> move circle
+//we can see that the implimentation in the child object is used. And the reason for that goes
+//back to our prototypical inheritance.
+//c ==>
+// Circle {}
+// __proto__: Shape
+// constructor: class Circle
+// move: ƒ move()
+// __proto__:
+// constructor: class Shape
+// move: ƒ move()
+// __proto__: Object
+//So, when we access c.move, JavaScript engine first looks for the method on the circle object.
+//When accessing a property or a method, because JavaScript engine walks up the tree, from the
+//child all the way to the parent, the move method in the circle object will be accessible first.
+//Now, let's imagine we want to reuse some of the code in the parent move method. In that case
+//we can call that by using the Super keyword. So When we call c.move() ==> move & move circle.
+//We get two messages, move from Shape class, and circle move from Circle class. So this is all
+//about method overriding.
 
-class Shape {
+// class Shape {
 
-    move() {
-        console.log('move');
-    }
-}
+//     move() {
+//         console.log('move');
+//     }
+// }
 
-class Circle extends Shape {
-    move() {
-        console.log('move circle');
-    } 
-}
+// class Circle extends Shape {
+//     move() {
+//         super.move();
+//         console.log('move circle');
+//     } 
+// }
 
-const c = new Circle('red', 1);
+// const c = new Circle('red', 1);
 
 
+// 11- Exercise
