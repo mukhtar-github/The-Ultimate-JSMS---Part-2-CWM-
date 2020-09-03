@@ -55,3 +55,28 @@
 
 
 // 2- CommonJS Modules
+
+//In this lecture, I'm going to talk about CommonJS Module Format that is used in Node. So,
+//as part of this, I'm assuming you have some basic farmiliarity with Node, atleast you installed
+//it in your machine and built a simple Hello World example. If you haven't, that basically
+//means you're a Frontend developer, so you have only used JavaScript inside of browsers.
+//So, this code I'm using, in the terminal, we can run this application with node es6-tooling.js,
+//and we get this message: Circle with radius 10. Now, we want to modularize this simple program.
+//So, here is the basic rule of thumb about modularity, things that are highly related should go
+//together, this is what we call Cohesion in software engineering. The same principle applies to
+//code. So in this piece of code, we going to find things that are highly related, and then move
+//them outside of this es6-tooling.js. Can you pin-point what parts are highly related? Well, we have
+//this weakmap radius that is used inside of the Circle class. So, these two pieces are highly related.
+//So, I'm going to create a new file, cut the code in es6-tooling.js, paste in the new file and save
+//it as circle.js. So here is our circle module. By default, everything that we define in a module is
+//considered to be private. So,it won't be accessible to the outside, unless we explicitly export it.
+//The way we export objects in Node or in CommonJS is that, we have a key word called module, which
+//refers to the current module. This module has a property called exports, and it an object. We can
+//add one or more properties to this object. So, when we import the circle module, we'll get the
+//circle class. Now, let's go back to our es6-tooling.js or es6-tooling module, on the top we want to
+//import the circle module. We use the require function for that
+
+
+const c = new Circle(10);
+c.draw();
+
