@@ -83,8 +83,8 @@
 //to create a new circle object c. The interseting part is that, in the circle.js module, we are only 
 //exporting the Circle class. So, the radius weakmap is not accessible in our other modules, because
 //it's part of the implimentation detail of the circle module. What we are exporting which is the Circle
-//class is we call the public interface. So this is abstraction in practice. So this is how we use commonJS
-//in node.
+//class is we call the public interface. So this is abstraction in practice, and this is how we use 
+//commonJS modules in Node.
 
 
 const Circle = require('./circle');
