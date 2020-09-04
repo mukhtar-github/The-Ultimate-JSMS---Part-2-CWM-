@@ -74,8 +74,20 @@
 //refers to the current module. This module has a property called exports, and it an object. We can
 //add one or more properties to this object. So, when we import the circle module, we'll get the
 //circle class. Now, let's go back to our es6-tooling.js or es6-tooling module, on the top we want to
-//import the circle module. We use the require function for that
+//import the circle module. We use the require function for that. The require function is part of the 
+//commonJS format. So, commonJS format defines the require function and the module.exports. We pass
+//a relative target to this target module. When we require circle.js module from es6-tooling module, 
+//we get what is returned from circle.js module into es6-tooling module. So module.exports represents
+//the object that is exported from circle.js module. In this case, that object is the Circle class.
+//So, in the es6-tooling module, we store the result in a const called Circle, and then we can use it 
+//to create a new circle object c. The interseting part is that, in the circle.js module, we are only 
+//exporting the Circle class. So, the radius weakmap is not accessible in our other modules, because
+//it's part of the implimentation detail of the circle module. What we are exporting which is the Circle
+//class is we call the public interface. So this is abstraction in practice. So this is how we use commonJS
+//in node.
 
+
+const Circle = require('./circle');
 
 const c = new Circle(10);
 c.draw();
