@@ -1,0 +1,26 @@
+{
+  "name": "The-Ultimate-JSMS---Part-2-CWM--master",
+  "version": "1.0.0",
+  "description": "",
+  "main": "circle.js",
+  "scripts": {
+    "babel": "babel --preset env es6-tooling2.js -o build/es6-tooling2.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mukhtar-github/The-Ultimate-JSMS---Part-2-CWM-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mukhtar-github/The-Ultimate-JSMS---Part-2-CWM-/issues"
+  },
+  "homepage": "https://github.com/mukhtar-github/The-Ultimate-JSMS---Part-2-CWM-#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
